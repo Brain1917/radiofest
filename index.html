@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F5F8FC" />
+    <meta
+      name="description"
+      content="Редакционный помощник радио: инструкции для ИИ, текстовые задачи и учебный пример редактуры."
+    />
+    <title>Редакционный помощник радио</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержанию</a>
+    <main id="main" class="wrap">
+      <section class="hero" aria-labelledby="headline">
+        <p class="eyebrow">Редакционный помощник радио</p>
+        <h1 id="headline">
+          Внедрите искусственный интеллект без сложной настройки и выпускайте
+          материалы быстрее, <span>сохраняя точность и доверие слушателей</span>
+        </h1>
+        <p class="hero-description">
+          Готовые инструкции для ИИ под задачи редакции. Подключите помощника
+          один раз, затем передавайте материалы и описывайте задачу обычными
+          словами.
+        </p>
+      </section>
+
+      <section class="tasks-section" id="tasks" aria-labelledby="tasks-title">
+        <h2 id="tasks-title">Что вы можете поручить помощнику</h2>
+        <ul class="task-list">
+          <li>Редактировать весь текст.</li>
+          <li>Готовить новости и подводки для эфира.</li>
+          <li>Подготавливать вопросы к интервью.</li>
+          <li>Писать рекламные тексты.</li>
+          <li>Превращать ваши материалы в посты для соцсетей.</li>
+          <li>Готовить материалы для сайта.</li>
+          <li>Писать статьи по интернет-источникам.</li>
+          <li>Собирать справки о гостях, музыкантах и событиях.</li>
+          <li>Сравнивать статистику.</li>
+          <li>Находить сведения в доступном текстовом архиве.</li>
+          <li>Готовить данные для редакционных таблиц.</li>
+        </ul>
+        <div class="principles">
+          <h2 id="tags-title">Что сохраняем и проверяем</h2>
+          <ul class="tag-list" aria-labelledby="tags-title">
+            <li>Сохраняем смысл</li>
+            <li>Сохраняем факты</li>
+            <li>Сохраняем авторский стиль</li>
+            <li>Указываем источники</li>
+            <li>Показываем расчёты</li>
+            <li>Отмечаем неизвестное</li>
+            <li>Сверяем цитаты</li>
+            <li>Показываем противоречия</li>
+            <li>Сохраняем обязательные условия</li>
+            <li>Учитываем длительность</li>
+            <li>Соблюдаем заданный формат</li>
+            <li>Ставим ударения</li>
+          </ul>
+        </div>
+      </section>
+
+      <section
+        class="example-section"
+        id="example"
+        aria-labelledby="example-title"
+      >
+        <h2 id="example-title">Демонстрация редакторской записки</h2>
+        <!-- Fixed demonstration: no live search or model request. -->
+        <div id="note-dialog" class="demo-dialog" data-state="request">
+          <p class="demo-assistant">
+            <code>/on-air-text-editor</code> · Редакционный помощник радио
+          </p>
+          <p
+            id="note-live"
+            class="visually-hidden"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          ></p>
+          <div class="demo-stage">
+            <div id="note-request" class="demo-request">
+              <label class="visually-hidden" for="note-prompt-text"
+                >Запрос для демонстрации</label
+              >
+              <textarea
+                id="note-prompt-text"
+                rows="5"
+                readonly
+                spellcheck="false"
+              >
+Собери две новости о том, что произошло в Тюмени за последние сутки, для редакторской записки ведущему. В каждой новости сначала дай главное, затем подробности и условия. Поставь ударения в необычных именах, укажи источники и рассчитай длительность чтения.</textarea>
+              <div class="demo-actions">
+                <button
+                  class="button primary"
+                  id="note-demo-button"
+                  type="button"
+                  aria-controls="editorial-note"
+                  aria-expanded="false"
+                  disabled
+                >
+                  Составить записку
+                </button>
+              </div>
+              <noscript
+                ><p class="small">
+                  Чтобы запустить демонстрацию, включите JavaScript.
+                </p></noscript
+              >
+            </div>
+            <div id="note-loading" class="demo-loading" hidden>
+              <span class="demo-spinner" aria-hidden="true"></span>
+              <p id="note-status" aria-hidden="true">Готовим записку</p>
+            </div>
+            <div
+              id="editorial-note"
+              class="demo-response"
+              aria-labelledby="note-title"
+              hidden
+            >
+              <h3 id="note-title" class="visually-hidden" tabindex="-1">
+                Ответ помощника
+              </h3>
+              <p class="spoken">
+                В Тюмени
+                <span class="demo-annotation"
+                  ><mark aria-describedby="annotation-main"
+                    >открыли бесплатную регистрацию</mark
+                  ><span class="demo-callout" id="annotation-main"
+                    >Главное поставили в начало</span
+                  ></span
+                >
+                на концерт музыки
+                <span class="demo-annotation demo-name"
+                  ><mark aria-describedby="annotation-name"
+                    >Кши́штофа Пендере́цкого</mark
+                  >.<span class="demo-callout" id="annotation-name"
+                    >Поставили ударения</span
+                  ></span
+                >
+                Он пройдет шестого сентября в семь вечера в зале "Северный".
+                Записаться нужно
+                <span class="demo-annotation demo-deadline"
+                  ><mark aria-describedby="annotation-deadline"
+                    >до шести вечера пятого сентября</mark
+                  >.<span class="demo-callout" id="annotation-deadline"
+                    >Сохранили срок регистрации</span
+                  ></span
+                >
+              </p>
+              <p class="spoken">
+                Библиотека "Городская" продлила запись на встречу с краеведами
+                до шестого сентября. Встреча состоится восьмого сентября в шесть
+                вечера. Участники смогут задать вопросы об истории тюменских
+                улиц.
+              </p>
+              <p id="reading-time">
+                Расчетная длительность: 25 секунд · 53 слова · 130 слов/мин
+              </p>
+              <div id="note-sources">
+                <p>
+                  <a
+                    href="#source-concert"
+                    aria-controls="source-concert"
+                    aria-expanded="false"
+                    >Сообщение организаторов о концерте · 4 сентября, 18:00 ↗</a
+                  >
+                </p>
+                <p>
+                  <a
+                    href="#source-library"
+                    aria-controls="source-library"
+                    aria-expanded="false"
+                    >Сообщение библиотеки о встрече · 5 сентября, 09:30 ↗</a
+                  >
+                </p>
+                <p>
+                  <a
+                    id="pronunciation-source"
+                    href="https://ru.wikipedia.org/wiki/Пендерецкий,_Кшиштоф"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Википедия: «Пендерецкий, Кшиштоф» · ударение ↗</a
+                  >
+                </p>
+                <div id="source-concert" class="demo-source" hidden>
+                  <p>
+                    Учебное сообщение организаторов · 4 сентября 2026 года,
+                    18:00. Время тюменское.
+                  </p>
+                  <p class="source-excerpt">
+                    Шестого сентября в 19:00 в зале "Северный" в Тюмени
+                    прозвучат произведения польского композитора Кшиштофа
+                    Пендерецкого. Предварительная запись обязательна. Приём
+                    заявок закончится пятого сентября в 18:00. Регистрация
+                    бесплатная, она открылась сегодня, четвёртого сентября.
+                  </p>
+                </div>
+                <div id="source-library" class="demo-source" hidden>
+                  <p>
+                    Учебное сообщение библиотеки · 5 сентября 2026 года, 09:30.
+                    Время тюменское.
+                  </p>
+                  <p class="source-excerpt">
+                    Восьмого сентября в 18:00 библиотека "Городская" в Тюмени
+                    проведёт встречу с краеведами. Участники смогут задать
+                    вопросы об истории тюменских улиц. Ранее приём заявок должен
+                    был закончиться четвёртого сентября. Библиотека продлила
+                    запись до шестого сентября.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="connect-section"
+        id="connect"
+        aria-labelledby="connect-title"
+      >
+        <div class="connect-intro">
+          <h2 id="connect-title">Начните с подключения помощника</h2>
+          <p>
+            Codex - приложение OpenAI для работы с ИИ. Терминал - окно для ввода
+            команд на компьютере.
+          </p>
+          <p>
+            Скопируйте команду и вставьте её в терминал, где установлен Codex.
+          </p>
+        </div>
+        <div class="command-panel">
+          <div class="command-heading">Терминал / Codex</div>
+          <label class="visually-hidden" for="install-command"
+            >Команда подключения каталога</label
+          >
+          <textarea id="install-command" rows="3" readonly spellcheck="false">
+codex plugin marketplace add Brain1917/radiofest-on-air-editor</textarea>
+          <button
+            class="button primary copy-button"
+            type="button"
+            id="copy-command"
+          >
+            Скопировать команду <span aria-hidden="true">⧉</span>
+          </button>
+          <p id="copy-status" class="small" role="status" aria-live="polite">
+            Копирование не запускает установку.
+          </p>
+          <button class="manual-copy" type="button" id="select-command" hidden>
+            Выделить команду для копирования
+          </button>
+        </div>
+        <p class="compatibility small">
+          Требуется Codex с поддержкой каталогов. Подключение в этой версии
+          интерфейса не проверено. Скорость работы и простота установки здесь не
+          измерялись.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
