@@ -10,6 +10,7 @@
     />
     <title>Редакционный помощник радио</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="workflow.css" />
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -127,6 +128,73 @@
             <li>Соблюдаем заданный формат</li>
             <li>Ставим ударения</li>
           </ul>
+        </div>
+      </section>
+
+      <section class="workflow-section" id="how-it-works" aria-labelledby="workflow-title">
+        <div class="workflow-canvas">
+          <h2 id="workflow-title">Как помощник работает с вашей задачей</h2>
+          <div class="workflow-track">
+            <div class="workflow-quality">
+              <p id="workflow-quality-title">Проверка качества</p>
+            </div>
+            <ol class="workflow-steps" role="list">
+              <li class="workflow-step" id="workflow-step-01">
+                <span class="workflow-number" aria-hidden="true">01</span>
+                <h3>Уточняет<br /> задачу</h3>
+                <p class="workflow-description">Читает материалы<br /> и задаёт нужные<br /> вопросы</p>
+              </li>
+              <li class="workflow-step" id="workflow-step-02">
+                <span class="workflow-number" aria-hidden="true">02</span>
+                <h3>Фиксирует<br /> требования</h3>
+                <p class="workflow-description">Определяет, что должно<br /> получиться</p>
+              </li>
+              <li class="workflow-step" id="workflow-step-03">
+                <span class="workflow-number" aria-hidden="true">03</span>
+                <h3>Составляет<br /> план</h3>
+                <p class="workflow-description">Разбивает работу<br /> на шаги</p>
+              </li>
+              <li class="workflow-step" id="workflow-step-04">
+                <span class="workflow-number" aria-hidden="true">04</span>
+                <h3>Готовит<br /> материал</h3>
+                <p class="workflow-description">Выполняет задачу<br /> по плану</p>
+              </li>
+              <li class="workflow-step workflow-checked" id="workflow-step-05" aria-describedby="workflow-quality-title">
+                <span class="workflow-number" aria-hidden="true">05</span>
+                <h3>Сверяет<br /> результат</h3>
+                <p class="workflow-description">Проверяет факты<br /> и требования</p>
+              </li>
+              <li class="workflow-step workflow-checked" id="workflow-step-06" aria-describedby="workflow-quality-title">
+                <span class="workflow-number" aria-hidden="true">06</span>
+                <h3>Ищет<br /> пропуски</h3>
+                <p class="workflow-description">Перечитывает текст<br /> и находит недочёты</p>
+              </li>
+              <li class="workflow-step workflow-checked" id="workflow-step-07" aria-describedby="workflow-quality-title">
+                <span class="workflow-number" aria-hidden="true">07</span>
+                <h3>Оценивает<br /> проверки</h3>
+                <p class="workflow-description">Решает, нужна ли<br /> доработка</p>
+              </li>
+              <li class="workflow-step" id="workflow-step-08">
+                <span class="workflow-number" aria-hidden="true">08</span>
+                <h3>Передаёт<br /> результат</h3>
+                <p class="workflow-description">Показывает материал<br /> и оставшиеся вопросы</p>
+              </li>
+            </ol>
+            <div class="workflow-return" aria-hidden="true">
+              <svg class="workflow-return-wide" viewBox="0 0 754 74" preserveAspectRatio="none" focusable="false">
+                <path d="M744 0 V30 Q744 50 724 50 H30 Q10 50 10 30 V-8 M0 5 L10-8 L20 5" />
+              </svg>
+              <svg class="workflow-return-narrow" viewBox="0 0 40 100" preserveAspectRatio="none" focusable="false">
+                <path d="M38 98 H12 Q2 98 2 94 V6 Q2 2 12 2 H38 M30 0 L38 2 L30 4" />
+              </svg>
+            </div>
+          </div>
+          <p class="workflow-return-caption">Если найдена ошибка — исправляет и проверяет снова</p>
+          <p class="visually-hidden">При ошибке после шага 07 помощник возвращается к подготовке материала на шаге 04.</p>
+          <div class="workflow-footer">
+            <p>Скилл задаёт этот порядок работы помощника.</p>
+            <p>Решение о выпуске принимает редактор.</p>
+          </div>
         </div>
       </section>
 
