@@ -10,7 +10,7 @@
     />
     <title>Редакционный помощник радио</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="workflow.css" />
+    <link rel="stylesheet" href="workflow.css?v=mobile-render-1" />
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -132,6 +132,19 @@
       </section>
 
       <section class="workflow-section" id="how-it-works" aria-labelledby="workflow-title">
+        <div class="workflow-mobile">
+          <picture>
+            <source media="(max-width: 600px)" srcset="assets/workflow-mobile.png" />
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E"
+              width="948"
+              height="1659"
+              loading="lazy"
+              decoding="async"
+              alt="Как работает помощник. Подготовка: 01 — уточняет задачу; 02 — фиксирует требования; 03 — составляет план. Создание материала: 04 — готовит материал. Проверка качества: 05 — сверяет результат; 06 — ищет пропуски; 07 — оценивает проверки. Передача результата: 08 — передаёт результат."
+            />
+          </picture>
+        </div>
         <div class="workflow-canvas">
           <h2 id="workflow-title">Как помощник работает с вашей задачей</h2>
           <div class="workflow-track">

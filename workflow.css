@@ -1,4 +1,7 @@
 /* Only the approved eight-step diagram; existing site sections stay untouched. */
+.workflow-mobile {
+	display: none;
+}
 .workflow-section {
   --workflow-ink: #1d293f;
   --workflow-blue: #3b5ee7;
@@ -226,4 +229,21 @@
     font-size: 20px;
     line-height: 1.4;
   }
+}
+@media (max-width: 600px) {
+	.workflow-section {
+		width: 100vw;
+		margin-inline: calc((100% - 100vw) / 2);
+	}
+	.workflow-canvas {
+		display: none;
+	}
+	.workflow-mobile {
+		display: block;
+	}
+	.workflow-mobile img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
 }
