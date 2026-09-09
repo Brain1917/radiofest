@@ -113,27 +113,133 @@ h2 {
 .tasks-section {
 	padding-block: var(--section-gap);
 }
-.task-list {
-	list-style: none;
-	padding: 0;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	column-gap: 48px;
+.tasks-hint {
+	color: var(--muted);
 }
-.task-list li {
-	padding: 10px 0 10px 20px;
-	position: relative;
+.task-list {
+	margin-top: 34px;
+	border-top: 1px solid var(--line);
+}
+.task {
 	border-bottom: 1px solid var(--line);
 }
-.task-list li::before {
+.task summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 28px;
+	min-height: 90px;
+	padding: 24px;
+	list-style: none;
+}
+.task summary::-webkit-details-marker {
+	display: none;
+}
+.task h3 {
+	margin: 0;
+	font: 500 23px / 1.4 var(--body);
+	max-width: 930px;
+}
+.task-toggle {
+	flex: 0 0 28px;
+	width: 28px;
+	height: 28px;
+	position: relative;
+	color: var(--blue);
+}
+.task-toggle::before,
+.task-toggle::after {
 	content: "";
 	position: absolute;
+	background: currentColor;
+	top: 13px;
+	left: 5px;
+	width: 18px;
+	height: 2px;
+}
+.task-toggle::after {
+	transform: rotate(90deg);
+}
+.task[open] .task-toggle::after {
+	display: none;
+}
+.task[open] {
+	background: var(--paper);
+}
+.task[open] summary {
+	color: var(--blue);
+	background: var(--blue-wash);
+}
+.task summary:hover {
+	background: var(--blue-wash);
+}
+.task summary:focus-visible {
+	outline: 3px solid var(--blue);
+	outline-offset: -3px;
+}
+.task-content {
+	padding: 26px 38px 32px;
+}
+.task-description {
+	max-width: 890px;
+	color: var(--muted);
+	font-size: 20px;
+	line-height: 1.55;
+}
+.task-steps-heading {
+	margin: 28px 0 22px;
+	font-size: 20px;
+	font-weight: 600;
+}
+.task-steps {
+	list-style: none;
+	counter-reset: step;
+	padding: 0;
+	margin: 0;
+}
+.task-steps li {
+	counter-increment: step;
+	position: relative;
+	padding: 0 0 24px 56px;
+	max-width: 960px;
+}
+.task-steps li:last-child {
+	padding-bottom: 0;
+}
+.task-steps li::before {
+	content: counter(step);
+	position: absolute;
 	left: 0;
-	top: 23px;
-	width: 5px;
-	height: 5px;
+	top: 0;
+	width: 32px;
+	height: 32px;
+	background: var(--blue-wash);
+	color: var(--blue);
 	border-radius: 50%;
-	background: var(--blue);
+	text-align: center;
+	font-size: 18px;
+	line-height: 32px;
+	font-weight: 600;
+}
+.task-steps li:not(:last-child)::after {
+	content: "";
+	position: absolute;
+	left: 15px;
+	top: 40px;
+	bottom: 8px;
+	width: 1px;
+	background: var(--line);
+}
+.task-steps h5 {
+	margin: 0 0 4px;
+	font-size: 20px;
+	line-height: 1.5;
+	font-weight: 600;
+}
+.task-steps p {
+	color: var(--muted);
+	font-size: 19px;
+	line-height: 1.55;
 }
 .principles {
 	margin-top: 36px;
@@ -454,7 +560,43 @@ h2 {
 	.hero {
 		padding-top: 28px;
 	}
-	.task-list,
+	.tasks-title-break {
+		display: none;
+	}
+	.tasks-hint {
+		font-size: 18px;
+	}
+	.task-list {
+		margin-top: 26px;
+	}
+	.task summary {
+		padding: 20px 12px;
+		gap: 16px;
+		min-height: 88px;
+	}
+	.task h3 {
+		font-size: 20px;
+	}
+	.task-toggle {
+		flex-basis: 24px;
+	}
+	.task-content {
+		padding: 22px 16px 28px;
+	}
+	.task-description {
+		font-size: 18px;
+	}
+	.task-steps-heading {
+		font-size: 18px;
+		margin: 24px 0 20px;
+	}
+	.task-steps li {
+		padding-left: 44px;
+	}
+	.task-steps h5,
+	.task-steps p {
+		font-size: 18px;
+	}
 	.connect-section {
 		grid-template-columns: 1fr;
 	}
